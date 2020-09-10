@@ -6,6 +6,7 @@
 
 export const isNarcissisticNumber = (numberToCheck: number): boolean => {
   if (numberToCheck <= 0) return false;
+
   // All numbers between 1-10 are narcissistic number
   if (numberToCheck > 0 && numberToCheck < 10) return true;
 
@@ -25,6 +26,7 @@ export const isNarcissisticNumber = (numberToCheck: number): boolean => {
  * @param {number} end - Positive number to end the counting
  * @return {number[]} returns an array of numbers
  */
+
 export const narcissisticNumbers = (start?: number, end?: number): number[] => {
   const result = [];
 
