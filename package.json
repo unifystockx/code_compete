@@ -14,6 +14,7 @@
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
     "prettier": "^2.1.1"
   },
   "scripts": {
@@ -21,6 +22,10 @@
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+  },
+  "husky": {
+    "pre-commit": "npm run prettier-format && npm run lint",
+    "pre-push": "npm run test"
   },
   "repository": {
     "type": "git",
