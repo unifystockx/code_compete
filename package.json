@@ -1,0 +1,36 @@
+{
+  "name": "code_compete",
+  "version": "1.0.0",
+  "description": "Coding Competition with TDD and TypeScript. \"Code Compete\" team will use this repository for practicing best practices while solving algorithmic challenges. Every day, a new challenge will be introduced to the team, team has to solve the challenge and commit their solution to this repository by making a PR to the master branch.",
+  "main": "jest.config.js",
+  "dependencies": {
+    "jest": "^26.4.2",
+    "ts-jest": "^26.3.0",
+    "typescript": "^4.0.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.1.0",
+    "@typescript-eslint/parser": "^4.1.0",
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.1.1"
+  },
+  "scripts": {
+    "test": "jest --watch",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unifystockx/code_compete.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unifystockx/code_compete/issues"
+  },
+  "homepage": "https://github.com/unifystockx/code_compete#readme"
+}
