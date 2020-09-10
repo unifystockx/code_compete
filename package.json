@@ -18,14 +18,17 @@
     "prettier": "^2.1.1"
   },
   "scripts": {
-    "test": "jest --watch",
+    "test": "jest",
+    "test:watch": "jest --watch",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
-    "prettier-format": "prettier --config .prettierrc 'src/**/*.ts' --write"
+    "prettier:format": "prettier --config .prettierrc 'src/**/*.ts' --write"
   },
   "husky": {
-    "pre-commit": "npm run prettier-format && npm run lint",
-    "pre-push": "npm run test"
+    "hooks": {
+      "pre-commit": "npm run lint && npm test",
+      "pre-push": "npm run test"
+    }
   },
   "repository": {
     "type": "git",
