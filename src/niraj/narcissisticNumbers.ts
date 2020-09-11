@@ -5,7 +5,7 @@
  */
 
 export const isNarcissisticNumber = (numberToCheck: number): boolean => {
-  if (numberToCheck <= 0) return false;
+  if (numberToCheck < 0) return false;
 
   // All numbers between 1-10 are narcissistic number
   if (numberToCheck < 10) return true;
