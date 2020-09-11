@@ -103,5 +103,8 @@ dist
 # TernJS port file
 .tern-port
 
+<<<<<<< HEAD
 src/**/*.map
 coverage
+=======
+>>>>>>> 5d7f7554696eab1be0365ee5a4ca666322d36243
