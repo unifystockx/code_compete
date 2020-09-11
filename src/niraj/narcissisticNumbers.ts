@@ -13,7 +13,7 @@ export const isNarcissisticNumber = (numberToCheck: number): boolean => {
   const strNum = String(numberToCheck);
 
   return (
-    numberToCheck ==
+    numberToCheck ===
     strNum
       .split('')
       .reduce((acc, val) => acc + parseInt(val) ** strNum.length, 0)
@@ -27,10 +27,17 @@ export const isNarcissisticNumber = (numberToCheck: number): boolean => {
  * @return {number[]} returns an array of numbers
  */
 
-export const narcissisticNumbers = (start?: number, end?: number): number[] => {
-  const result = [];
+export const narcissisticNumbersFinder = (
+  start: number,
+  end: number
+): number[] => {
+  const result: number[] = [];
 
-  if (!start || !end || start < 0 || end < 0 || end < start) return result;
+  if (!start || !end || start < 0 || end < 0)
+    throw new Error('Input range must be positive numbers');
+
+  if (end < start)
+    throw new Error('Starting number must be less than ending number');
 
   for (let i = start; i <= end; i++) {
     if (isNarcissisticNumber(i)) result.push(i);
