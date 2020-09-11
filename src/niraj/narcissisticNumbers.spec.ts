@@ -11,10 +11,6 @@ describe('Invalid Narcissistic Numbers', () => {
   test('11 is not a narcissistic number', () => {
     expect(isNarcissisticNumber(11)).toBe(false);
   });
-
-  test('153 is a narcissistic number', () => {
-    expect(isNarcissisticNumber(153)).toBe(true);
-  });
 });
 
 describe('Valid Narcissistic Numbers', () => {
