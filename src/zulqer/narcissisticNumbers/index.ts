@@ -1,15 +1,11 @@
 function isNarcissisticNumber(num: number): boolean {
   const arrayOfCurrentNumber = String(num).split('');
-  let isNarcissistic = false;
   const length = arrayOfCurrentNumber.length;
   let sum = 0;
   for (let i = 0; i < length; i++) {
     sum += Math.pow(parseInt(arrayOfCurrentNumber[i]), length);
   }
-  if (sum === num) {
-    isNarcissistic = true;
-  }
-  return isNarcissistic;
+  return sum === num;
 }
 
 function getNarcissisticNumbersInRange(
