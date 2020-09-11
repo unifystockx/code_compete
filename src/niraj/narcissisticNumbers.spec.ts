@@ -3,7 +3,11 @@ import {
   narcissisticNumbersFinder
 } from './narcissisticNumbers';
 
-describe('Narcissistic Numbers', () => {
+describe('Invalid Narcissistic Numbers', () => {
+  test('-5 is not a narcissistic number', () => {
+    expect(isNarcissisticNumber(0)).toBe(false);
+  });
+
   test('0 is not a narcissistic number', () => {
     expect(isNarcissisticNumber(0)).toBe(false);
   });
@@ -12,6 +16,16 @@ describe('Narcissistic Numbers', () => {
     expect(isNarcissisticNumber(11)).toBe(false);
   });
 
+  test('1 is a narcissistic number', () => {
+    expect(isNarcissisticNumber(1)).toBe(true);
+  });
+
+  test('153 is a narcissistic number', () => {
+    expect(isNarcissisticNumber(153)).toBe(true);
+  });
+});
+
+describe('Valid Narcissistic Numbers', () => {
   test('1 is a narcissistic number', () => {
     expect(isNarcissisticNumber(1)).toBe(true);
   });
