@@ -1,22 +1,24 @@
-function isNarcissisticNumber(num: number): boolean {
+const isNarcissisticNumber = (num: number): boolean => {
   const arrayOfCurrentNumber = String(num).split('');
-  const length = arrayOfCurrentNumber.length;
   let sum = 0;
-  for (let i = 0; i < length; i++) {
-    sum += Math.pow(parseInt(arrayOfCurrentNumber[i]), length);
+  for (let i = 0; i < arrayOfCurrentNumber.length; i++) {
+    sum += Math.pow(
+      parseInt(arrayOfCurrentNumber[i]),
+      arrayOfCurrentNumber.length
+    );
   }
   return sum === num;
-}
+};
 
-function getNarcissisticNumbersInRange(
+const getNarcissisticNumbersInRange = (
   start: number,
   end: number
-): Array<number> {
+): Array<number> => {
   const narcissisticNumbers: Array<number> = [];
   for (let i: number = start; i <= end; i++) {
     isNarcissisticNumber(i) && narcissisticNumbers.push(i);
   }
   return narcissisticNumbers;
-}
+};
 
 export { isNarcissisticNumber, getNarcissisticNumbersInRange };
