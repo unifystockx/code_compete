@@ -3,7 +3,7 @@
  * @param {number} num number to check if it is Narcissistic Number
  * @return {boolean} true or false
  */
-function checkIfNarcissisticNumber(num: number): boolean {
+const checkIfNarcissisticNumber = (num: number): boolean => {
   if (num < 0) {
     return false;
   }
@@ -15,7 +15,7 @@ function checkIfNarcissisticNumber(num: number): boolean {
     sum += Math.pow(digit, numberLength);
   }
   return sum === num;
-}
+};
 
 /**
  * Function to find all the Narcissistic Numbers in the given range
@@ -23,10 +23,10 @@ function checkIfNarcissisticNumber(num: number): boolean {
  * @param {number} endNum ending number in the range
  * @return {number[]} A array of Narcissistic Numbers
  */
-function getNarcissisticNumbersWithinRange(
+const getNarcissisticNumbersWithinRange = (
   startNum: number,
   endNum: number
-): Array<number> {
+): Array<number> => {
   const narcissisticNumbers: Array<number> = [];
   if (startNum < 0 || endNum < 0 || endNum < startNum) {
     return narcissisticNumbers;
@@ -38,6 +38,6 @@ function getNarcissisticNumbersWithinRange(
     }
   }
   return narcissisticNumbers;
-}
+};
 
 export { checkIfNarcissisticNumber, getNarcissisticNumbersWithinRange };
