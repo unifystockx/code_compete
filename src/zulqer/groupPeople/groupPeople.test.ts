@@ -1,4 +1,4 @@
-import { getPeopleByCity, getPeopleByGender } from '../index';
+import { getPeopleByCity, getPeopleByGender } from './groupPeople';
 import { data, expectedResultForCity, expectedResultForGender } from './data';
 describe('group by city function', () => {
   it('should return expected result grouped by city', () => {
