@@ -18,13 +18,18 @@ interface GroupOfPeopleByGender {
   people: Array<People>;
 }
 
-const groupBy = (arrayOfObject: Array<any>, property: string): Array<any> => {
-  const grouped = [];
-  arrayOfObject.map(function (obj) {
-    if (grouped[obj[property] || property]) {
-      grouped[obj[property] || property].push(obj);
-    } else {
-      grouped[obj[property] || property] = [obj];
+const groupBy = (
+  arrayOfObject: Array<any>,
+  property: string
+): Record<string, []> => {
+  const grouped = {};
+  arrayOfObject.map((obj) => {
+    if (obj[property]) {
+      if (grouped[obj[property]]) {
+        grouped[obj[property]].push(obj);
+      } else {
+        grouped[obj[property]] = [obj];
+      }
     }
   });
   return grouped;
