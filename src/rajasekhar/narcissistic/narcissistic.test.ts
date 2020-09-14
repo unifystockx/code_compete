@@ -1,4 +1,4 @@
-import { narcissisticPrinter, isNarcissistic } from '../index';
+import { narcissisticPrinter, isNarcissistic } from './index';
 
 describe('Narcissistic checker', () => {
   test('153 is narcissistic', () => {
