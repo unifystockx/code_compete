@@ -15,12 +15,11 @@ interface PersonGroup {
 
 /**
  * Function to return city based people groups for the given people/persons
- * @date 2020-09-11
  * @param {Array<Person>} peopleArr array of Person type
  * @return {Array<PersonGroup>} array of PersonGroup type
  */
 
-function getCityBasedPeopleGroup(peopleArr: Array<Person>): Array<PersonGroup> {
+const getCityBasedPeopleGroup = (peopleArr: Array<Person>): Array<PersonGroup> => {
   const cityBasedPeopleGroups: Array<PersonGroup> = [];
   peopleArr.forEach((person) => {
     const foundIndex: number = cityBasedPeopleGroups.findIndex(
@@ -43,6 +42,6 @@ function getCityBasedPeopleGroup(peopleArr: Array<Person>): Array<PersonGroup> {
     }
   });
   return cityBasedPeopleGroups;
-}
+};
 
 export { getCityBasedPeopleGroup };

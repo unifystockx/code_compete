@@ -104,12 +104,78 @@ const expectedTestResult = [
   }
 ];
 
-describe('testing getCityBasedPeopleGroup function', function () {
-  it('testing if testData returns the expectedTestResult', function () {
+const partialTestData = [
+  {
+    _id: '5f322e9e0b033f228afd008a',
+    name: 'Brown Lara',
+    gender: 'male',
+    email: 'brownlara@zolar.com',
+    phone: '+91 9411359806',
+    city: 'Hyderabad'
+  },
+  {
+    _id: '5f322e9e90a973778cc279b2',
+    name: 'Molina Barker',
+    gender: 'male',
+    email: 'molinabarker@zolar.com',
+    phone: '+91 8473520620',
+    city: 'Bengaluru'
+  }
+];
+
+const partialTestDataResult = [
+  {
+    count: 1,
+    city: 'Hyderabad',
+    people: [
+      {
+        _id: '5f322e9e0b033f228afd008a',
+        name: 'Brown Lara',
+        gender: 'male',
+        email: 'brownlara@zolar.com',
+        phone: '+91 9411359806',
+        city: 'Hyderabad'
+      }
+    ]
+  },
+  {
+    count: 1,
+    city: 'Bengaluru',
+    people: [
+      {
+        _id: '5f322e9e90a973778cc279b2',
+        name: 'Molina Barker',
+        gender: 'male',
+        email: 'molinabarker@zolar.com',
+        phone: '+91 8473520620',
+        city: 'Bengaluru'
+      }
+    ]
+  }
+];
+
+describe('testing getCityBasedPeopleGroup function', () => {
+  it('testing if testData returns the expectedTestResult', () => {
     const result = getCityBasedPeopleGroup(testData);
     expect(result).toEqual(expectedTestResult);
   });
-  it('testing if [] data returns the []', function () {
+
+  it('testing if testData does not return the partialTestDataResult', () => {
+    const result = getCityBasedPeopleGroup(testData);
+    expect(result).not.toEqual(partialTestDataResult);
+  });
+
+  it('testing if partialTestData returns the partialTestDataResult', () => {
+    const result = getCityBasedPeopleGroup(partialTestData);
+    expect(result).toEqual(partialTestDataResult);
+  });
+
+  it('testing if partialTestData does not return the expectedTestResult', () => {
+    const result = getCityBasedPeopleGroup(partialTestData);
+    expect(result).not.toEqual(expectedTestResult);
+  });
+
+  it('testing if [] data returns the []', () => {
     const result = getCityBasedPeopleGroup([]);
     expect(result).toEqual([]);
   });
