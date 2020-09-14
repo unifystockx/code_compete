@@ -19,7 +19,9 @@ interface PersonGroup {
  * @return {Array<PersonGroup>} array of PersonGroup type
  */
 
-const getCityBasedPeopleGroup = (peopleArr: Array<Person>): Array<PersonGroup> => {
+const getCityBasedPeopleGroup = (
+  peopleArr: Array<Person>
+): Array<PersonGroup> => {
   const cityBasedPeopleGroups: Array<PersonGroup> = [];
   peopleArr.forEach((person) => {
     const foundIndex: number = cityBasedPeopleGroups.findIndex(
