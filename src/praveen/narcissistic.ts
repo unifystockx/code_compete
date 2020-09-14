@@ -4,7 +4,7 @@
  * @return {boolean} true or false
  */
 function checkIfNarcissisticNumber(num: number): boolean {
-  if (num <= 0) {
+  if (num < 0) {
     return false;
   }
   const numberStr = num.toString();

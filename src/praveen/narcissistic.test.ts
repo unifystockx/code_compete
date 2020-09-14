@@ -24,9 +24,9 @@ describe('testing checkIfNarcissisticNumber function', () => {
     expect(result).toBe(false);
   });
 
-  it('testing if 0 is not NarcissisticNumber', () => {
+  it('testing if 0 is NarcissisticNumber', () => {
     const result = checkIfNarcissisticNumber(0);
-    expect(result).toBe(false);
+    expect(result).toBe(true);
   });
 
   it('testing if any negative number for eg. -5 is not NarcissisticNumber', () => {
