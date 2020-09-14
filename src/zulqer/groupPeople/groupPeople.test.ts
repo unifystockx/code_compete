@@ -12,7 +12,7 @@ describe('group by city function', () => {
   });
 });
 
-describe('group by gender function', function () {
+describe('group by gender function', () => {
   it('should return expected result grouped by gender', () => {
     const result = getPeopleByGender(data);
     expect(result).toEqual(expectedResultForGender);
