@@ -13,36 +13,36 @@ const testData = [
   'LEFT'
 ];
 
-describe('testing getFinalDirectionForVehicle function', () => {
-  it('testing if testData returns SOUTH direction', () => {
+describe('getFinalDirectionForVehicle function', () => {
+  it('whether the function returns SOUTH direction when testData is provided', () => {
     const result = getFinalDirectionForVehicle(testData);
     expect(result).toEqual('SOUTH');
   });
 
-  it('testing if it returns the NORTH direction with no moves', () => {
+  it('whether the function returns NORTH direction when no move is provided', () => {
     const result = getFinalDirectionForVehicle([]);
     expect(result).toEqual('NORTH');
   });
 
-  it('testing if it returns exception for invalid moves', () => {
+  it('whether the function throws exception when invalid move is provided', () => {
     const result = getFinalDirectionForVehicle(['TOP']);
     expect(result).toThrow();
     expect(result).toThrowError('Invalid Move');
   });
 });
 
-describe('testing getNextDirectionForMove function', () => {
-  it('testing if it returns EAST direction for RIGHT move and current direction as NORTH', () => {
+describe('getNextDirectionForMove function', () => {
+  it('whether the function returns EAST direction for RIGHT move and current direction as NORTH', () => {
     const result = getNextDirectionForMove('NORTH', 'RIGHT');
     expect(result).toEqual('EAST');
   });
 
-  it('testing if it returns undefined direction for invalid move and current direction as NORTH', () => {
+  it('whether the function returns undefined direction for invalid move and current direction as NORTH', () => {
     const result = getNextDirectionForMove('NORTH', 'DOWN');
     expect(result).toEqual(undefined);
   });
 
-  it('testing if it returns exception for invalid direction', () => {
+  it('whether the function throws exception for invalid direction', () => {
     const result = getNextDirectionForMove('TOP', 'BACK');
     expect(result).toThrow();
     expect(result).toThrowError('Invalid Direction');
