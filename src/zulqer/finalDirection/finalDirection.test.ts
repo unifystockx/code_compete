@@ -37,7 +37,7 @@ describe('getFinalDirectionByUnknownInput function', () => {
     ).toEqual('SOUTH');
   });
 
-  test('getFinalDirectionByUnknownInput by providing valid negative input  and expect result to be SOUTH', () => {
+  test('getFinalDirectionByUnknownInput by providing valid negative input  and expect result to be WEST', () => {
     expect(
       finalDirection.getFinalDirectionByUnknownInput([
         'LEFT',
