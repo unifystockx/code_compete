@@ -14,7 +14,7 @@ interface GroupOfPeopleByCity {
 }
 
 const groupPeopleByCity = (
-  arrayOfObject: Array<any>
+  arrayOfObject: Array<People>
 ): Array<GroupOfPeopleByCity> => {
   if (arrayOfObject === []) return [];
   const grouped = {};
