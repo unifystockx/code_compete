@@ -52,7 +52,12 @@ const isValidMove = (move: string): boolean => {
 const isValidDirection = (direction: string): boolean => {
   return Object.keys(validDirections).includes(direction);
 };
-
+const convertToDirection = (num: number) => {
+  if (num < 0) {
+    num = num + Math.abs(num) * numberOfDirection;
+  }
+  return validDirections[num % numberOfDirection];
+};
 class FinalDirection {
   getFinalDirectionByValidatedInput = (
     moves: Array<validMoves>,
@@ -62,7 +67,7 @@ class FinalDirection {
       .map((move) => MOVE_REWARD[validMoves[move]])
       .reduce((sum, currentValue) => sum + currentValue, initialFacing);
 
-    return validDirections[sumOfRewards % numberOfDirection];
+    return convertToDirection(sumOfRewards);
   };
 
   getFinalDirectionByUnknownInput = (
@@ -85,7 +90,7 @@ class FinalDirection {
         validDirections[initialFacing]
       );
 
-    return validDirections[sumOfRewards % numberOfDirection];
+    return convertToDirection(sumOfRewards);
   };
 }
 

@@ -37,6 +37,18 @@ describe('getFinalDirectionByUnknownInput function', () => {
     ).toEqual('SOUTH');
   });
 
+  test('getFinalDirectionByUnknownInput by providing valid negative input  and expect result to be SOUTH', () => {
+    expect(
+      finalDirection.getFinalDirectionByUnknownInput([
+        'LEFT',
+        'LEFT',
+        'LEFT',
+        'LEFT',
+        'LEFT'
+      ])
+    ).toEqual('WEST');
+  });
+
   test('getFinalDirectionByUnknownInput by providing invalid SAMPLE_INVALID_UNKNOWN_INPUT input and expect result to throw error', () => {
     const result = () =>
       finalDirection.getFinalDirectionByUnknownInput(
