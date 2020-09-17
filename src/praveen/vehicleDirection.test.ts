@@ -1,4 +1,7 @@
-import { getFinalDirectionForVehicle, getNextDirectionForMove } from './vehicleDirection';
+import {
+  getFinalDirectionForVehicle,
+  getNextDirectionForMove
+} from './vehicleDirection';
 
 const testData = [
   'STRAIGHT',
