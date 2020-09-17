@@ -1,5 +1,7 @@
-import { checkIfNarcissticNumber } from './narcissisticNumbers';
-import { getNarcissticNumbersWithinRange } from './index';
+import {
+  checkIfNarcissticNumber,
+  getNarcissticNumbersWithinRange
+} from './narcissisticNumbers';
 
 describe('test checkIfNaricissisticNumber function', () => {
   it('test if 0 is not a naricissistic number', () => {
@@ -61,7 +63,19 @@ describe('test getNarcissticNumbersWithinRange function ', () => {
   });
 
   it('test if given invalid range', () => {
-    expect(getNarcissticNumbersWithinRange(-10, 10000)).toEqual([]);
+    expect(getNarcissticNumbersWithinRange(-10, 10000)).toEqual([
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      ...validNumbersList
+    ]);
   });
 
   it('test if given invalid range', () => {
