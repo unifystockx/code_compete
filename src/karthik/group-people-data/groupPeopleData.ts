@@ -19,7 +19,7 @@ const groupPeopleByCity = (
   if (arrayOfObject === []) return [];
   const grouped = {};
   const property = 'city';
-  arrayOfObject.forEach((obj, idx) => {
+  arrayOfObject.forEach((obj) => {
     if (obj[property]) {
       if (grouped[obj[property]]) {
         grouped[obj[property]].push(obj);
@@ -30,7 +30,7 @@ const groupPeopleByCity = (
   });
 
   const res: Array<GroupOfPeopleByCity> = [];
-  for (let str in grouped) {
+  for (const str in grouped) {
     res.push({
       count: grouped[str].length,
       city: str,
