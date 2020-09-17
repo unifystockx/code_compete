@@ -29,14 +29,11 @@ const groupPeopleByCity = (
     }
   });
 
-  const res: Array<GroupOfPeopleByCity> = [];
-  for (const str in grouped) {
-    res.push({
-      count: grouped[str].length,
-      city: str,
-      people: grouped[str]
-    });
-  }
+  const res: Array<GroupOfPeopleByCity> = Object.keys(grouped).map((key) => ({
+    count: grouped[key].length,
+    city: key,
+    people: grouped[key]
+  }));
 
   return res;
 };
