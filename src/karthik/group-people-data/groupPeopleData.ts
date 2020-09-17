@@ -19,7 +19,7 @@ const groupPeopleByCity = (
   if (arrayOfObject === []) return [];
   const grouped = {};
   const property = 'city';
-  arrayOfObject.map((obj) => {
+  arrayOfObject.forEach((obj, idx) => {
     if (obj[property]) {
       if (grouped[obj[property]]) {
         grouped[obj[property]].push(obj);
