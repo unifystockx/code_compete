@@ -13,6 +13,13 @@ interface GroupOfPeopleByCity {
   people: Array<People>;
 }
 
+/**
+ * Function to group people by city
+ *
+ * @param {Array<People>} arrayOfObject - Array of objects having people information
+ * @return {Array<GroupOfPeopleByCity>} - Array of objects returning people information grouped by their cities
+ *
+ */
 const groupPeopleByCity = (
   arrayOfObject: Array<People>
 ): Array<GroupOfPeopleByCity> => {
