@@ -50,7 +50,7 @@ const getNextDirectionForMove = (
   currentDirection: string,
   nextMove: string
 ): Direction => {
-  let nextDirection: Direction = undefined;
+  let nextDirection: Direction;
   if (currentDirection === 'NORTH') {
     nextDirection = PossibleMovesFromNorth[nextMove];
   } else if (currentDirection === 'EAST') {
@@ -60,7 +60,7 @@ const getNextDirectionForMove = (
   } else if (currentDirection === 'WEST') {
     nextDirection = PossibleMovesFromWest[nextMove];
   } else {
-    new Error('Invalid Direction');
+    throw new Error('Invalid Direction');
   }
   return nextDirection;
 };
