@@ -32,10 +32,7 @@ const getNarcissticNumbersWithinRange = (
 ): Array<number> => {
   const naricissisticNumbers: Array<number> = [];
   for (let checkNum = from; checkNum <= to; checkNum++) {
-    const checkIfNaricissistic: boolean = checkIfNarcissticNumber(checkNum);
-    if (checkIfNaricissistic) {
-      naricissisticNumbers.push(checkNum);
-    }
+    if (checkIfNarcissticNumber(checkNum)) naricissisticNumbers.push(checkNum);
   }
 
   return naricissisticNumbers;
