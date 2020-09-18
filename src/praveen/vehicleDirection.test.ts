@@ -25,9 +25,10 @@ describe('getFinalDirectionForVehicle function', () => {
   });
 
   it('whether the function throws exception when invalid move is provided', () => {
-    const result = getFinalDirectionForVehicle(['TOP']);
-    expect(result).toThrow();
-    expect(result).toThrowError('Invalid Move');
+    expect(() => getFinalDirectionForVehicle(['TOP'])).toThrow();
+    expect(() => getFinalDirectionForVehicle(['TOP'])).toThrowError(
+      'Invalid Move'
+    );
   });
 });
 
@@ -43,8 +44,9 @@ describe('getNextDirectionForMove function', () => {
   });
 
   it('whether the function throws exception for invalid direction', () => {
-    const result = getNextDirectionForMove('TOP', 'BACK');
-    expect(result).toThrow();
-    expect(result).toThrowError('Invalid Direction');
+    expect(() => getNextDirectionForMove('TOP', 'BACK')).toThrow();
+    expect(() => getNextDirectionForMove('TOP', 'BACK')).toThrowError(
+      'Invalid Direction'
+    );
   });
 });
